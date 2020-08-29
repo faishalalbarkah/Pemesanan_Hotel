@@ -39,7 +39,10 @@ export default function Button(props) {
           style={props.style}
           target={props.target === "_blank" ? "_blank" : undefined}
           rel={props.target === "_blank" ? "noopener noreferrer" : undefined}
-        ></a>
+        >
+          {/* {" "}
+          {props.children} */}
+        </a>
       );
     } else {
       return (
@@ -55,13 +58,13 @@ export default function Button(props) {
     }
   }
   return (
-    <Button
+    <button
       className={className.join(" ")}
       style={props.style}
       onClick={onClick}
     >
       {props.children}
-    </Button>
+    </button>
   );
 }
 
@@ -71,6 +74,7 @@ Button.propTypes = {
   href: propTypes.string,
   target: propTypes.string,
   className: propTypes.string,
+  isPrimary: propTypes.bool,
   isExternal: propTypes.bool,
   isDisabled: propTypes.bool,
   isLoading: propTypes.bool,
